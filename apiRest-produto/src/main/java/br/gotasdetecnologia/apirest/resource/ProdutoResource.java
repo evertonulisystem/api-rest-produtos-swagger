@@ -21,5 +21,7 @@ public class ProdutoResource {
 	public List<Produto> listaprodutos(){
 		return produtoRepository.findAll();
 	}
+	
+	
 
 }
