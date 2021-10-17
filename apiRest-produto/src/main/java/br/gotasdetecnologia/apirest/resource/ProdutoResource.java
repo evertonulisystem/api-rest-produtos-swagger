@@ -26,30 +26,31 @@ public class ProdutoResource {
 	ProdutoRepository produtoRepository;
 	
 	@GetMapping("/produtos")
-	@ApiOperation(value="Listagem dos Produtos")
+	@ApiOperation(value="Listar Produtos")
 	public List<Produto> listaprodutos(){
 		return produtoRepository.findAll();
 	}
 	
 	@GetMapping("/produto/{id}")
-	@ApiOperation(value="Procurar por um produto")
+	@ApiOperation(value="Localizar Produto")
 	public Produto listaProdutosPorId(@PathVariable(value="id") long id){
 		return produtoRepository.findById(id);
 	}
 	
 	@PostMapping(path="/produto")
-	@ApiOperation(value="Cadastrar novo Produto")
+	@ApiOperation(value="Cadastrar Produto")
 	public Produto salvarProduto(@RequestBody Produto produto){
 		return produtoRepository.save(produto);
 	}
 	
 	@DeleteMapping(path="/produto") //o ID é passado no proprio postman
-	@ApiOperation(value="Exclusão de Produto")
+	@ApiOperation(value="Excluir Produto")
 	public void excluirRegistroPorId(@RequestBody Produto produto){
 		produtoRepository.delete(produto);
 	}
 	
 	@PutMapping(path="/produto") //o ID é passado no proprio postman
+	@ApiOperation(value="Editar Produto") //Apenas para alterar este nome da classe
 	public Produto atualizarRegistroPorId(@RequestBody Produto produto){
 		return produtoRepository.save(produto);
 	}
