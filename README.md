@@ -38,6 +38,10 @@ https://www.linkedin.com/in/evertonuli
 
 Maiores detalhes visite canal Oficial: https://www.youtube.com/channel/UCv68KoK1bo2R44fGmcT1G2g e assista a playlist.
 
+## Heroku
+https://apirest-testedeprodutos.herokuapp.com/swagger-ui.html#/
+
+
 ```  
 # Agradecimentos
 Amigos, inscritos, visitante em geral.
