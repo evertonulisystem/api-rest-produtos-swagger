@@ -3,6 +3,7 @@ package br.gotasdetecnologia.apirest.config;
 import java.util.ArrayList;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import io.swagger.models.Contact;
@@ -17,6 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
+@ComponentScan
 public class SwaggerConfig {
 	
 	@Bean

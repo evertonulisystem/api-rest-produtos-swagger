@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.gotasdetecnologia.apirest.model.Produto;
 import br.gotasdetecnologia.apirest.repository.ProdutoRepository;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController //Aqui a diferença da aplicação com Model. Ou seja, retorna um objeto e não uma visão. dispensa uso do ResponseBody. E enviaremos o obje de dominio como resp. HTTP no formato JSON ( entendido para consumo do postman por exe)
 @RequestMapping(value="/api")
@@ -25,28 +26,30 @@ public class ProdutoResource {
 	ProdutoRepository produtoRepository;
 	
 	@GetMapping("/produtos")
+	@ApiOperation(value="Listagem dos Produtos")
 	public List<Produto> listaprodutos(){
 		return produtoRepository.findAll();
 	}
 	
 	@GetMapping("/produto/{id}")
+	@ApiOperation(value="Procurar por um produto")
 	public Produto listaProdutosPorId(@PathVariable(value="id") long id){
 		return produtoRepository.findById(id);
 	}
 	
 	@PostMapping(path="/produto")
+	@ApiOperation(value="Cadastrar novo Produto")
 	public Produto salvarProduto(@RequestBody Produto produto){
 		return produtoRepository.save(produto);
 	}
 	
 	@DeleteMapping(path="/produto") //o ID é passado no proprio postman
-	//@Transactional
+	@ApiOperation(value="Exclusão de Produto")
 	public void excluirRegistroPorId(@RequestBody Produto produto){
 		produtoRepository.delete(produto);
 	}
 	
 	@PutMapping(path="/produto") //o ID é passado no proprio postman
-	//@Transactional
 	public Produto atualizarRegistroPorId(@RequestBody Produto produto){
 		return produtoRepository.save(produto);
 	}
