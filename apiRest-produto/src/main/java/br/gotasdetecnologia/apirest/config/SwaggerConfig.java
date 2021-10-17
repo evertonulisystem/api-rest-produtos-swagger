@@ -1,17 +1,12 @@
 package br.gotasdetecnologia.apirest.config;
 
-import java.util.ArrayList;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import io.swagger.models.Contact;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -33,11 +28,11 @@ public class SwaggerConfig {
 	
 	private ApiInfo metaInfo() {
 		return new ApiInfoBuilder ()
-				.title("EXEMPLO API REST")
-				.description("Produtos de Tecnologia")
+				.title("API REST")
+				.description("Produtos Tecnológicos")
 				.version("1.0")
-				.license("Apache TomCat Versao 9.052")
-				.licenseUrl("https://www.apache.org/license.html")
+				.license("Aprenda a Fazer")
+				.licenseUrl("https://www.youtube.com/channel/UCv68KoK1bo2R44fGmcT1G2g")
 				.build();					
 	}
 }

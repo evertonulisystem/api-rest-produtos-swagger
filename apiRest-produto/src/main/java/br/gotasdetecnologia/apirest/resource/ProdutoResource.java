@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController //Aqui a diferença da aplicação com Model. Ou seja, retorna um objeto e não uma visão. dispensa uso do ResponseBody. E enviaremos o obje de dominio como resp. HTTP no formato JSON ( entendido para consumo do postman por exe)
 @RequestMapping(value="/api")
-@Api(value="API REST Produtos Tecnológicos")
+@Api//(value="API REST Produtos Tecnológicos")
 @CrossOrigin(origins="*") //Liberando acesso a todos que queiram utilizar
 public class ProdutoResource {
 	
