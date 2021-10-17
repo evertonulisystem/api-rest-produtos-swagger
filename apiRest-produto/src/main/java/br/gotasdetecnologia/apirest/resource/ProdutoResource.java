@@ -1,11 +1,8 @@
 package br.gotasdetecnologia.apirest.resource;
 
 import java.util.List;
-
-import javax.transaction.Transactional;
-
-import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,12 +11,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import br.gotasdetecnologia.apirest.model.Produto;
 import br.gotasdetecnologia.apirest.repository.ProdutoRepository;
+import io.swagger.annotations.Api;
 
 @RestController //Aqui a diferença da aplicação com Model. Ou seja, retorna um objeto e não uma visão. dispensa uso do ResponseBody. E enviaremos o obje de dominio como resp. HTTP no formato JSON ( entendido para consumo do postman por exe)
 @RequestMapping(value="/api")
+@Api(value="API REST Produtos Tecnológicos")
+@CrossOrigin(origins="*") //Liberando acesso a todos que queiram utilizar
 public class ProdutoResource {
 	
 	@Autowired
