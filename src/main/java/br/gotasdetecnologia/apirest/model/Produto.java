@@ -22,28 +22,6 @@ public class Produto implements Serializable{
 	
 	private String nome;
 	
-	private Integer handle;
-	
-	//@NotNull(message="O valor do Handle Participante não pode ser nulo.")
-	//@Min(value=1, message="O campo deve ter mais de um caracter.")
-	
-	//@NotEmpty(message="O valor do Handle Participante não pode ser nulo.")
-	
-	@NotBlank(message="o valor nao pode ser vazio")
-	private String handleParticipante;
-	
-	public String getHandleParticipante() {
-		return handleParticipante;
-	}
-
-	public void setHandleParticipante(String handleParticipante) {
-		this.handleParticipante = handleParticipante;
-	}
-
-	public void setHandle(Integer handle) {
-		this.handle = handle;
-	}
-
 	private BigDecimal quantidade;
 	
 	private BigDecimal preco;
@@ -82,15 +60,7 @@ public class Produto implements Serializable{
 		this.preco = preco;
 	}
 
-	public int getHandle() {
-		return handle;
-	}
-
-	public void setHandle(int handle) {
-		this.handle = handle;
-	}
-
-	
+		
 	public LocalDateTime getDtCadastro() {
 		return dtCadastro;
 	}
@@ -99,9 +69,7 @@ public class Produto implements Serializable{
 		this.dtCadastro = dtCadastro;
 	}
 	
-	
-	
-	
+		
 	
 
 }
