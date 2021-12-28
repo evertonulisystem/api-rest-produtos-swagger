@@ -1,6 +1,9 @@
 package br.gotasdetecnologia.apirest.resource;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,7 +29,6 @@ public class ProdutoResource {
 	ProdutoRepository produtoRepository;
 	
 	@GetMapping("/produtos")
-	@ApiOperation(value="Listar Produtos")
 	public List<Produto> listaprodutos(){
 		return produtoRepository.findAll();
 	}
@@ -39,7 +41,7 @@ public class ProdutoResource {
 	
 	@PostMapping(path="/produto")
 	@ApiOperation(value="Cadastrar Produto")
-	public Produto salvarProduto(@RequestBody Produto produto){
+	public Produto salvarProduto(@Valid @RequestBody Produto produto){
 		return produtoRepository.save(produto);
 	}
 	

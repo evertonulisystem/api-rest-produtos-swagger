@@ -3,6 +3,7 @@ package br.gotasdetecnologia.apirest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class ApiRestProdutoApplication {
 
@@ -10,4 +11,7 @@ public class ApiRestProdutoApplication {
 		SpringApplication.run(ApiRestProdutoApplication.class, args);
 	}
 
-}
+	
+    }
+	
+

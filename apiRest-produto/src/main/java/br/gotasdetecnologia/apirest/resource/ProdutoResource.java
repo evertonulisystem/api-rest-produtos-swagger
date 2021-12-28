@@ -2,6 +2,8 @@ package br.gotasdetecnologia.apirest.resource;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +20,18 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController //Aqui a diferença da aplicação com Model. Ou seja, retorna um objeto e não uma visão. dispensa uso do ResponseBody. E enviaremos o obje de dominio como resp. HTTP no formato JSON ( entendido para consumo do postman por exe)
 @RequestMapping(value="/api")
-@Api//(value="API REST Produtos Tecnológicos")
+@Api//(value="Persistência IMC - API REST Produtos Tecnológicos")
 @CrossOrigin(origins="*") //Liberando acesso a todos que queiram utilizar
 public class ProdutoResource {
 	
 	@Autowired
 	ProdutoRepository produtoRepository;
+	
+	@PostMapping(path="/produto")
+	@ApiOperation(value="Cadastrar Produto")
+	public Produto salvarProduto(@RequestBody Produto produto){
+		return produtoRepository.save(produto);
+	}
 	
 	@GetMapping("/produtos")
 	@ApiOperation(value="Listar Produtos")
@@ -37,9 +45,16 @@ public class ProdutoResource {
 		return produtoRepository.findById(id);
 	}
 	
-	@PostMapping(path="/produto")
-	@ApiOperation(value="Cadastrar Produto")
-	public Produto salvarProduto(@RequestBody Produto produto){
+	
+	
+	
+	
+	
+	
+	
+	@PutMapping(path="/produto") //o ID é passado no proprio postman
+	@ApiOperation(value="Editar Produto") //Apenas para alterar este nome da classe
+	public Produto atualizarRegistroPorId(@RequestBody Produto produto){
 		return produtoRepository.save(produto);
 	}
 	
@@ -49,11 +64,7 @@ public class ProdutoResource {
 		produtoRepository.delete(produto);
 	}
 	
-	@PutMapping(path="/produto") //o ID é passado no proprio postman
-	@ApiOperation(value="Editar Produto") //Apenas para alterar este nome da classe
-	public Produto atualizarRegistroPorId(@RequestBody Produto produto){
-		return produtoRepository.save(produto);
-	}
+	
 	
 	
 	

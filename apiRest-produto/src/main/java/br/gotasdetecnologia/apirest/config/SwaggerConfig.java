@@ -29,7 +29,7 @@ public class SwaggerConfig {
 	private ApiInfo metaInfo() {
 		return new ApiInfoBuilder ()
 				.title("API REST")
-				.description("Produtos Tecnológicos")
+				.description("Farmácia Teste")
 				.version("1.0")
 				.license("Aprenda a Fazer")
 				.licenseUrl("https://www.youtube.com/channel/UCv68KoK1bo2R44fGmcT1G2g")
